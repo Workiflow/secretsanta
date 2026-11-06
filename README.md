@@ -14,8 +14,8 @@ Next.js 16 (App Router, server actions) · Supabase (Auth + Postgres + RLS) · R
 
 ## Setup
 
-1. **Supabase project.** In the SQL editor, run `supabase/migrations/0001_init.sql` (or `supabase db push`).
-2. **Auth → Email templates → Magic Link:** the template must contain the code, e.g.
+1. **Supabase project.** In the SQL editor, with the Supabase GitHub integration enabled, migrations in `supabase/migrations/` apply on merge to `main`. Without it, run them with `supabase db push`.
+2. **Auth → Email templates → Magic Link:** paste `supabase/templates/magic_link.html`. It must contain the code, e.g.
    `<p>Your Out of the Hat code is <strong>{{ .Token }}</strong></p>`.
    Without `{{ .Token }}` people get a link and no code.
 3. **Auth → SMTP settings:** point it at Resend (host `smtp.resend.com`, port 465, user `resend`, password = your Resend API key). Supabase's built-in mailer is limited to a handful of emails an hour and will fail as soon as a family signs up at once.
