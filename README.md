@@ -14,7 +14,7 @@ Next.js 16 (App Router, server actions) · Supabase (Auth + Postgres + RLS) · R
 
 ## Setup
 
-1. **Supabase project.** In the SQL editor, with the Supabase GitHub integration enabled, migrations in `supabase/migrations/` apply on merge to `main`. Without it, run them with `supabase db push`.
+1. **Supabase project.** With the Supabase GitHub integration enabled, migrations in `supabase/migrations/` apply on merge to `main`. Without it, run them with `supabase db push`.
 2. **Auth → Email templates → Magic Link:** paste `supabase/templates/magic_link.html`. It must contain the code, e.g.
    `<p>Your Out of the Hat code is <strong>{{ .Token }}</strong></p>`.
    Without `{{ .Token }}` people get a link and no code.
